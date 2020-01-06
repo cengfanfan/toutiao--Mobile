@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Component from './components'
+import './utils/register-vant'
+import 'normalize.css'
 
 Vue.use(Component)
 Vue.config.productionTip = false
