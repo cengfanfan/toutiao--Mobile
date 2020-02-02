@@ -1,6 +1,6 @@
-
+import ArticleList from '@/views/home/component/article-list'
 export default {
-  install () {
-
+  install (Vue) {
+    Vue.component('article-list', ArticleList)
   }
 }

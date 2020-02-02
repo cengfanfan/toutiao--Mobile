@@ -1,26 +1,26 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { getToken, setToken, removeToken } from '@/utils/storage'
 
 Vue.use(Vuex)
 
+const USER_KEY = 'user'
 export default new Vuex.Store({
   state: {
-    count: 10
+    user: getToken(USER_KEY)
   },
   mutations: {
-    add (state) {
-      state.count++
+    getUserToken (state, data) {
+      state.user = data
+      setToken(USER_KEY, state.user)
     },
-    cut (state) {
-      state.count--
+    removeUserToken (state, data) {
+      state.uesr = data
+      removeToken(USER_KEY, state.uesr)
     }
   },
   actions: {
-    asyncAdd (mutations) {
-      setInterval(() => {
-        mutations.commit('add')
-      }, 1000)
-    }
+
   },
   modules: {
   }
